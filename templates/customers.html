@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <title>The Customers</title>
+</head>
+<body>
+<a href="{% url 'my-index' %}">Home</a>
+<h1>Customers</h1>
+
+
+<ul>
+
+    {% for x in mydjango2day %}
+        <li>{{ x.firstname }} {{ x.lastname }}</li>
+
+    {% endfor %}
+
+</ul>
+
+<ul>
+
+    {% for x in mydjango2day %}
+    <li><a href="details/{{ x.id }}">{{ x.firstname }}{{ x.lastname }}</a></li>
+    {% endfor %}
+
+</ul>
+</body>
+</html>
