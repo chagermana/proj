@@ -26,5 +26,7 @@ urlpatterns = [
     path('django2day',views.django2day,name='my-django2day'),
     path('django2day/',views.django2day,name='my-django2day'),
     path('django2day/details/<int:id>',views.details,name='my-details'),
+    path('signin/',views.home_view,name='my-signin'),
+    path('signup/',views.hi,name='my-signup'),
 
 ]

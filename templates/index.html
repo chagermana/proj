@@ -6,22 +6,28 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% load static %}
+
     <title>Home</title>
 </head>
 <style>
     body{
-        background-color: crimson;
 
+        background-color: crimson;
     }
+
 </style>
 <body>
+
 <a href="{%  url 'my-about' %}">About</a>
 <a href="{% url 'my-contact' %}">Contact</a>
 <a href="{% url 'my-django2day' %}">Customer application</a>
+<a href="{% url 'my-signin' %}">Sign in</a>
+<a href="{% url 'my-signup' %}">Sign up</a>
+
 <h2 style="color: greenyellow; text-align: center">PETROL PUMP MANAGEMENT SYSTEM</h2>
 <hr>
-<img src="{% static 'img/petrol station.jpeg' %}" alt="">
-<p>Petrol is fuel used in many types of vehicles like cars,lorries,trucks and many others.</p>
+<img src="{% static 'img/petrol station.jpeg' %}" alt="width=400"height="400">
+<p>Petrol is fuel used in many types of vehicles like cars,lorries,trucks and many others.Today, petroleum is found in vast underground reservoirs where ancient seas were located. Petroleum reservoirs can be found beneath land or the ocean floor. Their crude oil is extracted with giant drilling machines.</p>
 
 
 <p></p>
