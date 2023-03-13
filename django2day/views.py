@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.template import loader
 from .models import Customer
 from .forms import InputForm
+from .forms import BeginningForm
+from django.http import HttpResponseRedirect
 
 def index(request):
     return render(request,'index.html')
@@ -39,5 +41,18 @@ def hi(request):
     context={}
     context['form']=InputForm()
     return render(request,"sign up.html",context)
+
+def beginning(request):
+    submitted=False
+    if request.method=="POST":
+        form = BeginningForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/beginning?submitted=True')
+    else:
+        form=BeginningForm
+        if 'submitted' in request.GET:
+            submitted=True
+    return render(request,"beginning.html",{'form':form,'submitted':submitted})
 
 
